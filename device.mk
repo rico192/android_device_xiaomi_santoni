@@ -126,6 +126,25 @@ PRODUCT_COPY_FILES += \
     $(TOPDIR)frameworks/av/services/audiopolicy/config/r_submix_audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/r_submix_audio_policy_configuration.xml \
     $(TOPDIR)frameworks/av/services/audiopolicy/config/usb_audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/usb_audio_policy_configuration.xml
 
+# ANT
+PRODUCT_PACKAGES += \
+    AntHalService \
+    com.dsi.ant.antradio_library
+	
+# Bluetooth
+PRODUCT_PACKAGES += \
+    libldacBT_dec
+
+# Camera
+PRODUCT_PACKAGES += \
+    camera.device@1.0-impl \
+    camera.device@3.2-impl \
+    android.hardware.camera.provider@2.4-impl \
+    android.hardware.camera.provider@2.4-service \
+    vendor.qti.hardware.camera.device@1.0 \
+    vendor.qti.hardware.camera.device@1.0_vendor \
+    camera.msm8937
+
 # Configstore
 PRODUCT_PACKAGES += \
     android.hardware.configstore@1.0-service
@@ -493,3 +512,7 @@ $(call inherit-product, vendor/xiaomi/santoni/santoni-vendor.mk)
 
 # Inherit common proprietary files
 $(call inherit-product-if-exists, vendor/xiaomi/msm8937-common/msm8937-common-vendor.mk)
+
+# GCam Go
+PRODUCT_PACKAGES += \
+    GCam
